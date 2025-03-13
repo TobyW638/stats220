@@ -14,3 +14,5 @@
 ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
 
 ![](https://media1.tenor.com/m/yO21gfpez0kAAAAC/sharkcat-memecoin.gif)
+
+https://www.dataquest.io/blog/tutorial-getting-started-with-r-and-rstudio/
