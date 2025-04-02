@@ -1,0 +1,41 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+library(tidyverse)
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRSWvLYbgsoIGJn4r0KO3B6dO7IlJYBi1Vt-GyG9P0ht0tnKqUkdcF9VWBRGEJxCar30nYhKemqp4a-/pub?gid=2045594004&single=true&output=csv")
+
+lastest_data <- logged_data %>%
+  rename(brand = 2, rating = 3, number_colours = 4, closed_shoes = 5)
+```
+
+```{css}
+body {
+color: blue
+}
+ 
+```
+
+## Shoes at uni
+
+This data shows the different shoes I have seen around my hall at Carlaw campus. I was collected at random by sitting at the window and taking notes of each person I saw.
+
+Here are 2 different graphs to help to show what brand and type of shoes is most popular.
+
+```{r}
+
+ggplot(data = lastest_data) +
+  geom_bar(aes(x = closed_shoes))
+
+ggplot(data = lastest_data) +
+  geom_bar(aes(x = brand))
+
+paste("The least amount of colours in the shoes, I found were", min(lastest_data$number_colours))
+
+paste("The highest rating I gave the for a pair of shoes out of 5 was", max(lastest_data$rating))
+```
+
+
